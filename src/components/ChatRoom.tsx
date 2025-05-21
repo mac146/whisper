@@ -8,8 +8,16 @@ import Message, { MessageData } from "./Message";
 import { useUser } from "@/contexts/UserContext";
 import { useToast } from "@/components/ui/use-toast";
 
+// Define proper type for chat partners
+type ChatPartner = {
+  id: string;
+  age: number;
+  gender: "male" | "female" | "other";
+  intro: string;
+};
+
 // Sample chat partners for one-on-one chats
-const chatPartners = [
+const chatPartners: ChatPartner[] = [
   {
     id: "partner1",
     age: 24,
@@ -46,7 +54,7 @@ const ChatRoom: React.FC = () => {
   const { user } = useUser();
   const [messages, setMessages] = useState<MessageData[]>([]);
   const [newMessage, setNewMessage] = useState("");
-  const [currentPartner, setCurrentPartner] = useState<typeof chatPartners[0] | null>(null);
+  const [currentPartner, setCurrentPartner] = useState<ChatPartner | null>(null);
   const [isChatActive, setIsChatActive] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
@@ -111,7 +119,7 @@ const ChatRoom: React.FC = () => {
         sender: {
           id: "system",
           age: 0,
-          gender: "other"
+          gender: "other" as "male" | "female" | "other"
         },
         timestamp: Date.now(),
         isCurrentUser: false,
