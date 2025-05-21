@@ -13,6 +13,7 @@ export interface MessageData {
   };
   timestamp: number;
   isCurrentUser: boolean;
+  isSystemMessage?: boolean;
 }
 
 interface MessageProps {
@@ -20,6 +21,16 @@ interface MessageProps {
 }
 
 const Message: React.FC<MessageProps> = ({ message }) => {
+  if (message.isSystemMessage) {
+    return (
+      <div className="flex justify-center my-4">
+        <div className="bg-secondary px-4 py-2 rounded-full text-sm text-center text-muted-foreground">
+          {message.text}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`flex gap-2 mb-3 ${message.isCurrentUser ? 'flex-row-reverse' : 'flex-row'}`}>
       <Avatar gender={message.sender.gender} />

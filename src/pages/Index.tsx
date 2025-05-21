@@ -26,7 +26,7 @@ const ChatApp: React.FC = () => {
       <header className="bg-white dark:bg-gray-800 shadow-sm p-4">
         <div className="container mx-auto">
           <h1 className="text-2xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-indigo-500">
-            AnonyChat
+            OneChat
           </h1>
         </div>
       </header>
