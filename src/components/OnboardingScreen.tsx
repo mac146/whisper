@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/components/ui/use-toast";
-import { GenderMale, GenderFemale, User } from "lucide-react";
+import { Male, Female, User } from "lucide-react";
 
 interface OnboardingScreenProps {
   onComplete: (age: number, gender: "male" | "female" | "other") => void;
@@ -80,14 +80,14 @@ const OnboardingScreen: React.FC<OnboardingScreenProps> = ({ onComplete }) => {
                   <div className="flex items-center space-x-2 rounded-lg border p-3 cursor-pointer hover:bg-secondary">
                     <RadioGroupItem value="male" id="male" />
                     <Label htmlFor="male" className="flex items-center cursor-pointer">
-                      <GenderMale className="w-5 h-5 mr-2 text-blue-500" />
+                      <Male className="w-5 h-5 mr-2 text-blue-500" />
                       Male
                     </Label>
                   </div>
                   <div className="flex items-center space-x-2 rounded-lg border p-3 cursor-pointer hover:bg-secondary">
                     <RadioGroupItem value="female" id="female" />
                     <Label htmlFor="female" className="flex items-center cursor-pointer">
-                      <GenderFemale className="w-5 h-5 mr-2 text-pink-500" />
+                      <Female className="w-5 h-5 mr-2 text-pink-500" />
                       Female
                     </Label>
                   </div>

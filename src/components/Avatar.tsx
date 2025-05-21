@@ -1,6 +1,6 @@
 
 import React from "react";
-import { User, GenderMale, GenderFemale } from "lucide-react";
+import { User, Male, Female } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface AvatarProps {
@@ -15,8 +15,8 @@ const Avatar: React.FC<AvatarProps> = ({ gender, className }) => {
     "bg-purple-100 text-purple-500";
   
   const Icon = 
-    gender === "male" ? GenderMale : 
-    gender === "female" ? GenderFemale : 
+    gender === "male" ? Male : 
+    gender === "female" ? Female : 
     User;
 
   return (
