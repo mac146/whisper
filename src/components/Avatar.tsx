@@ -1,6 +1,5 @@
-
 import React from "react";
-import { User, Male, Female } from "lucide-react";
+import { User, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface AvatarProps {
@@ -14,9 +13,10 @@ const Avatar: React.FC<AvatarProps> = ({ gender, className }) => {
     gender === "female" ? "bg-pink-100 text-pink-500" : 
     "bg-purple-100 text-purple-500";
   
+  // Use User for male, UserRound for female, and keep User for other
   const Icon = 
-    gender === "male" ? Male : 
-    gender === "female" ? Female : 
+    gender === "male" ? User : 
+    gender === "female" ? UserRound : 
     User;
 
   return (
